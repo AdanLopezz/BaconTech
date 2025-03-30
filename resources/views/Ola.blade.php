@@ -1,6 +1,6 @@
-@extends('Layouts.app')
-
+@extends('Layouts.dash')
 @section('content')
+
     <div class="container-fluid bg-light">
         <div class="row min-vh-100">
             <!-- Barra Lateral -->
