@@ -24,3 +24,19 @@ Route::get('Ola',function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get("dashboard",function(){
+    return view('dashboard');
+});
+
+Route::get("landing",function(){
+    return view('landing');
+});
+
+Route::resource("metodoPago", App\Http\Controllers\MetodoPagoController::class);
+
+Route::resource("direccion", App\Http\Controllers\DireccionController::class);
+
+Route::resource("cliente", App\Http\Controllers\ClienteController::class);
+
+Route::resource("persona", App\Http\Controllers\PersonaController::class);
