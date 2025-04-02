@@ -30,7 +30,11 @@
                 <li class="nav-item py-2 {{ Request::is('metodoPago*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('metodoPago.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-clapperboard ms-4"></i>Metodo de Pago</a></li>
                 <li class="nav-item py-2 {{ Request::is('direccion*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('direccion.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-users ms-4"></i> Direccion</a></li>
                 <li class="nav-item py-2 {{ Request::is('persona*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('persona.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-language ms-4"></i>Personas</a></li>
-                <li class="nav-item py-2 {{ Request::is('') ? 'bg-primary rounded' : '' }}"><a href="#" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Directores</a></li>
+                <li class="nav-item py-2 {{ Request::is('cliente*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('cliente.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Clientes</a></li>
+                <li class="nav-item py-2 {{ Request::is('proveedor*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('proveedor.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Proveedores</a></li>
+                <li class="nav-item py-2 {{ Request::is('') ? 'bg-primary rounded' : '' }}"><a href="" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Compras</a></li>
+                <li class="nav-item py-2 {{ Request::is('') ? 'bg-primary rounded' : '' }}"><a href="" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Detalle_compras</a></li>
+                <li class="nav-item py-2 {{ Request::is('') ? 'bg-primary rounded' : '' }}"><a href="" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Productos</a></li>
             </ul>
 
             <div class="mt-auto">

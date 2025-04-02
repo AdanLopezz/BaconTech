@@ -40,3 +40,7 @@ Route::resource("direccion", App\Http\Controllers\DireccionController::class);
 Route::resource("cliente", App\Http\Controllers\ClienteController::class);
 
 Route::resource("persona", App\Http\Controllers\PersonaController::class);
+
+Route::resource("cliente", App\Http\Controllers\ClienteController::class);
+
+Route::resource("proveedor", App\Http\Controllers\ProveedorController::class);

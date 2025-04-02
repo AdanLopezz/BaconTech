@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.side')
 
 @section('content')
     <div class="row justify-content-center">
@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    </div>
+
 
 
     <div class="row justify-content-center mt-5">

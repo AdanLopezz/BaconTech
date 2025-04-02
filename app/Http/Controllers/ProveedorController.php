@@ -14,7 +14,9 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        //
+        $proveedores = Proveedor::all();
+        return view('proveedores.index', compact('proveedores'));
+
     }
 
     /**
@@ -24,7 +26,7 @@ class ProveedorController extends Controller
      */
     public function create()
     {
-        //
+        return view('proveedores.create');
     }
 
     /**
@@ -35,7 +37,8 @@ class ProveedorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Proveedor::create($request->all());
+        return view('proveedores.index')->with('success', 'Proveedor creado satisfactoriamente');
     }
 
     /**
@@ -57,7 +60,7 @@ class ProveedorController extends Controller
      */
     public function edit(Proveedor $proveedor)
     {
-        //
+        return view('proveedores.edit', compact('proveedor'));
     }
 
     /**
@@ -69,7 +72,8 @@ class ProveedorController extends Controller
      */
     public function update(Request $request, Proveedor $proveedor)
     {
-        //
+        $proveedor->update($request->all());
+        return redirect()->route('proveedor.index')->with('success', 'Proveedor actualizado satisfactoriamente');
     }
 
     /**
@@ -80,6 +84,7 @@ class ProveedorController extends Controller
      */
     public function destroy(Proveedor $proveedor)
     {
-        //
+        $proveedor->delete();
+        return redirect()->route('proveedor.index')->with('success', 'Proveedor borrado correctamente.');
     }
 }
