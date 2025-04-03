@@ -26,7 +26,7 @@
             <h4 class="fw-bold text-center"></h4>
 
             <ul class="nav flex-column w-100 mt-3">
-                <li class="nav-item py-2 {{ Request::is('dashboard') ? 'bg-primary rounded' : '' }}"><a href="dashboard" class="text-decoration-none fw-bold text-white  align-items-center gap-4 d-flex"><i class="fa-solid fa-film ms-4"></i>Peliculas</a></li>
+                <li class="nav-item py-2 {{ Request::is('dashboard') ? 'bg-primary rounded' : '' }}"><a href="{{route('dashboard')}}" class="text-decoration-none fw-bold text-white  align-items-center gap-4 d-flex"><i class="fa-solid fa-film ms-4"></i>Peliculas</a></li>
                 <li class="nav-item py-2 {{ Request::is('metodoPago*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('metodoPago.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-clapperboard ms-4"></i>Metodo de Pago</a></li>
                 <li class="nav-item py-2 {{ Request::is('direccion*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('direccion.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-users ms-4"></i> Direccion</a></li>
                 <li class="nav-item py-2 {{ Request::is('persona*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('persona.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-language ms-4"></i>Personas</a></li>

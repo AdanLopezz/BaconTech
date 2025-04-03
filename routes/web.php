@@ -50,3 +50,5 @@ Route::resource('compra', App\Http\Controllers\CompraController::class);
 route::resource('producto', App\Http\Controllers\ProductoController::class);
 
 route::resource('detallecompra', App\Http\Controllers\DetalleCompraController::class);
+
+Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');

@@ -30,24 +30,8 @@
                 <li class="nav-item">
                     <a class="nav-link active text-white fw-bold" aria-current="page" href="landing">Inicio</a>
                 </li>
-
-                <li class="nav-item dropdown bg-black">
-                    <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Perfil
-                    </a>
-                    <ul class="dropdown-menu bg-black">
-                        <li><a class="dropdown-item text-white fw-bold" href="#">Modificar Perfil</a></li>
-                        <li><a class="dropdown-item text-white fw-bold" href="#">Configuracion</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#"></a></li>
-                    </ul>
-                </li>
                 <li class="nav-item"><a class="dropdown-item nav-link text-white fw-bold" href="#">Productos</a></li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success text-black fw-bold bg-white" type="submit">Buscar</button>
-            </form>
             <ul class="navbar-nav ms-auto">
                 @guest
                     @if (Route::has('login'))
