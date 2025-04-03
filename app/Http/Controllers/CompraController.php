@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Compra;
+use App\Models\Proveedor;
 use Illuminate\Http\Request;
 
 class CompraController extends Controller
@@ -14,6 +15,8 @@ class CompraController extends Controller
      */
     public function index()
     {
+        $compras = Compra::all();
+        return view('compras.index', compact('compras'));
         //
     }
 
@@ -24,6 +27,7 @@ class CompraController extends Controller
      */
     public function create()
     {
+        return view('compras.create');
         //
     }
 
@@ -35,6 +39,13 @@ class CompraController extends Controller
      */
     public function store(Request $request)
     {
+        Compra::create([
+            'id_cliente' => $request->id_cliente,
+            'fecha'=> $request->fecha,
+            'total_compra'=> $request->total_compra,
+            'id_metodo_pago'=> $request->id_metodo_pago
+        ]);
+        return redirect()->route('compra.index')->with('success','Compra agregada correctamente');
         //
     }
 
@@ -57,6 +68,7 @@ class CompraController extends Controller
      */
     public function edit(Compra $compra)
     {
+        return view('compras.edit', compact('compra'));
         //
     }
 
@@ -69,6 +81,9 @@ class CompraController extends Controller
      */
     public function update(Request $request, Compra $compra)
     {
+        $compra->update($request->all());
+        return redirect()->route('compra.index')->with('success','Compra actualizada correctamente');
+
         //
     }
 
@@ -80,6 +95,8 @@ class CompraController extends Controller
      */
     public function destroy(Compra $compra)
     {
+        $compra->delete();
+        return redirect()->route('compra.index')->with('success','Compra eliminada correctamente');
         //
     }
 }

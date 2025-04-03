@@ -14,6 +14,8 @@ class DetalleCompraController extends Controller
      */
     public function index()
     {
+        $detallecompras = Detalle_compra::all();
+        return view('detallecompras.index', compact('detallecompras'));
         //
     }
 
@@ -24,6 +26,7 @@ class DetalleCompraController extends Controller
      */
     public function create()
     {
+        return view('detallecompras.create');
         //
     }
 
@@ -35,16 +38,25 @@ class DetalleCompraController extends Controller
      */
     public function store(Request $request)
     {
+
+        Detalle_compra::create([
+            'id_compra' => $request->id_compra,
+            'id_producto' => $request->id_producto, // Ahora sí se usa id_producto
+            'cantidad' => $request->cantidad,
+            'subtotal' => $request->subtotal
+        ]);
+
+        return redirect()->route('detallecompra.index')->with('success','Detalle Compra agregado correctamente');
         //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Detalle_compra  $detalle_compra
+     * @param  \App\Models\Detalle_compra  $detallecompra
      * @return \Illuminate\Http\Response
      */
-    public function show(Detalle_compra $detalle_compra)
+    public function show(Detalle_compra $detallecompra)
     {
         //
     }
@@ -52,11 +64,12 @@ class DetalleCompraController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Detalle_compra  $detalle_compra
+     * @param  \App\Models\Detalle_compra  $detallecompra
      * @return \Illuminate\Http\Response
      */
-    public function edit(Detalle_compra $detalle_compra)
+    public function edit(Detalle_compra $detallecompra)
     {
+        return view('detallecompras.edit', compact('detallecompra'));
         //
     }
 
@@ -67,19 +80,23 @@ class DetalleCompraController extends Controller
      * @param  \App\Models\Detalle_compra  $detalle_compra
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Detalle_compra $detalle_compra)
+    public function update(Request $request, Detalle_compra $detallecompra)
     {
+       $detallecompra->update(request()->all());
+       return redirect()->route('detallecompra.index')->with('success','Detalle Compra actualizado correctamente');
         //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Detalle_compra  $detalle_compra
+     * @param  \App\Models\Detalle_compra  $detallecompra
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Detalle_compra $detalle_compra)
+    public function destroy(Detalle_compra $detallecompra)
     {
+        $detallecompra->delete();
+        return redirect()->route('detallecompra.index')->with('success','Detalle Compra eliminado correctamente');
         //
     }
 }

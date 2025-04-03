@@ -6,5 +6,40 @@
 // Variables
 @import 'variables';
 
+@import 'bootstrap/scss/functions';
+
+// Variables
+@import 'bootstrap/scss/variables';
+
+
+.fondo{
+    background-image: url('/public/img/fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 20rem;
+}
+
+
+
+// Create your own map
+$custom-colors: (
+    "custom-color": $teal-500,
+    "azul":         $blue-800,
+    "azu-cp":       $blue-700,
+    "azul-claro":   $blue-400,
+    "gris-transparentoso": $gray-500,
+    "gris-claro": $gray-300
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+.fondo{
+    background-image: url('/public/img/fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 20rem;
+}
+
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';

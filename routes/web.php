@@ -44,3 +44,9 @@ Route::resource("persona", App\Http\Controllers\PersonaController::class);
 Route::resource("cliente", App\Http\Controllers\ClienteController::class);
 
 Route::resource("proveedor", App\Http\Controllers\ProveedorController::class);
+
+Route::resource('compra', App\Http\Controllers\CompraController::class);
+
+route::resource('producto', App\Http\Controllers\ProductoController::class);
+
+route::resource('detallecompra', App\Http\Controllers\DetalleCompraController::class);

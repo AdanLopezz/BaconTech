@@ -21,7 +21,7 @@
 <main class="container-fluid bg-light">
     <div class="row min-vh-100">
         <div class="col-2 d-flex flex-column align-items-center bg-dark text-white p-3">
-            <img src="{{asset('img/perfil.png')}}" class="rounded-circle w-50 mb-3" alt="logo">
+            <img src="{{asset('img/perfil.jpeg')}}" class="rounded-circle w-50 mb-3" alt="logo">
 
             <h4 class="fw-bold text-center"></h4>
 
@@ -32,9 +32,11 @@
                 <li class="nav-item py-2 {{ Request::is('persona*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('persona.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-language ms-4"></i>Personas</a></li>
                 <li class="nav-item py-2 {{ Request::is('cliente*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('cliente.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Clientes</a></li>
                 <li class="nav-item py-2 {{ Request::is('proveedor*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('proveedor.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Proveedores</a></li>
-                <li class="nav-item py-2 {{ Request::is('') ? 'bg-primary rounded' : '' }}"><a href="" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Compras</a></li>
-                <li class="nav-item py-2 {{ Request::is('') ? 'bg-primary rounded' : '' }}"><a href="" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Detalle_compras</a></li>
-                <li class="nav-item py-2 {{ Request::is('') ? 'bg-primary rounded' : '' }}"><a href="" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Productos</a></li>
+                <li class="nav-item py-2 {{ Request::is('compra*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('compra.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Compras</a></li>
+                <li class="nav-item py-2 {{ Request::is('producto*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('producto.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Productos</a></li>
+                <li class="nav-item py-2 {{ Request::is('detallecompra*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('detallecompra.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Detalle Compra</a></li>
+
+
             </ul>
 
             <div class="mt-auto">
@@ -48,7 +50,7 @@
 
         </div>
 
-        <div class="col pt-4">
+        <div class="col pt-4 bg-light ps-0">
             @yield('content')
         </div>
 

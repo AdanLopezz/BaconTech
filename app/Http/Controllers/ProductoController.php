@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Persona;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
+        $productos = Producto::all();
+        return view('productos.index', compact('productos'));
         //
     }
 
@@ -24,6 +27,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
+        return view('productos.create');
         //
     }
 
@@ -35,8 +39,19 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+
+        Producto::create([
+            'nom_producto' => $request->nom_producto,
+            'desc_producto' => $request->desc_producto,
+            'stock' => $request->stock,
+            'id_proveedor'=> $request->id_proveedor,
+        ]);
+
+        return redirect()->route('producto.index')->with('success', 'Producto agregado');
     }
+
+
 
     /**
      * Display the specified resource.
@@ -57,6 +72,7 @@ class ProductoController extends Controller
      */
     public function edit(Producto $producto)
     {
+        return view('productos.edit', compact('producto'));
         //
     }
 
@@ -69,6 +85,9 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
+        $producto->update($request->all());
+
+        return redirect()->route('producto.index')->with('success', 'Producto actualizado correctamente');
         //
     }
 
@@ -80,6 +99,8 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
+        $producto->delete();
+        return redirect()->route('producto.index')->with('success','Producto eliminado correctamente');
         //
     }
 }

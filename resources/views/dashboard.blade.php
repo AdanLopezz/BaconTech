@@ -1,7 +1,7 @@
 @extends('layouts.side')
 @section('content')
-    <div class="container-fluid bg-light">
-        <div class="row min-vh-100">
+    <div class="container-fluid bg-black">
+        <div class="row min-vh-100 rounded-4">
             <!-- Contenido Principal -->
             <div class="col-7 bg-white p-4">
                 <div class="d-flex justify-content-between align-items-center">
@@ -93,7 +93,7 @@
             </div>
 
             <!-- Tercera Columna -->
-            <div class="col-3 p-4 bg-light">
+            <div class="col p-4 bg-light">
                 <div class="card p-3 text-center bg-gris-claro">
                     <h5 class="fw-bold" >Uso de almacenamiento</h5>
                     <div class="progress">

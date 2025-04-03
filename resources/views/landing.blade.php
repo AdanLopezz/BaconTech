@@ -1,9 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.landing')
 @section('content')
 
-    <style>
 
-    </style>
+
 
 
     <header class="fondo pb-5 pt-0 d-flex flex-column justify-content-center">
