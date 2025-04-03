@@ -112,8 +112,8 @@
 
                 <div class="card p-3 mt-4 text-center bg-gris-claro">
                     <h5 class="fw-bold" >Acciones rapidas</h5>
-                    <button class="btn btn-azul w-100 my-2">Añadir usuarios</button>
-                    <button class="btn btn-secondary w-100 my-2">Generar reportes</button>
+                    <a href="{{ route('persona.create') }}" class="btn btn-azul w-100 my-2">Añadir personas</a>
+                    <a href="{{ route('producto.create') }}" class="btn btn-secondary w-100 my-2">Generar productos</a>
                 </div>
             </div>
         </div>
