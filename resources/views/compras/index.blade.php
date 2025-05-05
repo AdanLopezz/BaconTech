@@ -29,10 +29,12 @@
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">ID Cliente</th>
-                    <th scope="col">Fecha</th>
+                    <th scope="col">Nombre de cliente</th>
+                    <th scope="col">Apellido paterno de cliente</th>
+                    <th scope="col">Apellido materno de cliente</th>
+                    <th scope="col">Fecha de compra</th>
                     <th scope="col">Total de Compra</th>
-                    <th scope="col">ID Metodo de Pago</th>
+                    <th scope="col">Metodo de Pago</th>
 
                 </tr>
                 </thead>
@@ -40,12 +42,12 @@
                 @foreach($compras as $compra)
                     <tr>
                         <th scope="row">{{$loop->index+1}}</th>
-                        <td>{{$compra->id_cliente}}</td>
-                        <td>{{$compra->fecha }}</td>
+                        <td>{{$compra->nombre}}</td>
+                        <td>{{$compra->apellido_paterno}}</td>
+                        <td>{{$compra->apellido_materno}}</td>
+                        <td>{{$compra->fecha}}</td>
                         <td>{{$compra->total_compra }}</td>
-                        <td>{{$compra->id_metodo_pago }}</td>
-
-
+                        <td>{{$compra->descripcion}}</td>
                         <td>
                             <a class="btn btn-warning" href="{{ route('compra.edit', $compra->id_compra) }}">Editar</a>
                             <form action="{{ route('compra.destroy', $compra->id_compra) }}" method="POST" style="display:inline;">

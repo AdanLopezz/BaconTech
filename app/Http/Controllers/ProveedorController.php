@@ -14,7 +14,9 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        $proveedores = Proveedor::all();
+        $proveedores = Proveedor::join('personas', 'personas.id_persona', '=', 'proveedores.id_persona')
+        ->get();
+        //dd($proveedores);
         return view('proveedores.index', compact('proveedores'));
 
     }
@@ -38,9 +40,8 @@ class ProveedorController extends Controller
     public function store(Request $request)
     {
         Proveedor::create($request->all());
-        return view('proveedores.index')->with('success', 'Proveedor creado satisfactoriamente');
+        return redirect()->route('proveedor.index')->with('success', 'Proveedor agregado correctamente');
     }
-
     /**
      * Display the specified resource.
      *

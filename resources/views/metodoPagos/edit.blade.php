@@ -19,7 +19,7 @@
                 @csrf
                 @method("PUT")
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre de la ciudad</label>
+                    <label for="nombre" class="form-label">Metodo de pago</label>
 
                     <input type="text" class="form-control" id="nombre" name="descripcion" aria-describedby="emailHelp" value="{{$metodoPago->descripcion}}">
                 </div>

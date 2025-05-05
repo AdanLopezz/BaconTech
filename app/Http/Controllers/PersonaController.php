@@ -14,7 +14,9 @@ class PersonaController extends Controller
      */
     public function index()
     {
-        $personas = Persona::all();
+        $personas = Persona::join('direcciones', 'personas.id_direccion', '=', 'direcciones.id_direccion')
+            ->get();
+        //dd($personas);
         return view('personas.index', compact('personas'));
     }
 
@@ -37,14 +39,13 @@ class PersonaController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
-
         $request->validate([
             'nombre' => 'required|string|max:255',
             'apellido_paterno' => 'required|string|max:255',
             'apellido_materno' => 'nullable|string|max:255',
             'correo' => 'required|email|max:255',
             'telefono' => 'required|string|max:15',
-            'id_direccion' => 'required|exists:direcciones,id_direccion',
+            'id_direccion' => 'required',
         ]);
 
         Persona::create([
@@ -69,14 +70,10 @@ class PersonaController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Persona  $persona
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Persona $persona)
     {
+        //dd($direcciones);
         return view('personas.edit', compact('persona'));
     }
 

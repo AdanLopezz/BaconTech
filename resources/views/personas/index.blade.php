@@ -34,7 +34,9 @@
                     <th scope="col">Apellido Materno</th>
                     <th scope="col">Correo</th>
                     <th scope="col">Telefono</th>
-                    <th scope="col">Id Direccion</th>
+                    <th scope="col">Calle</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Codigo postal</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,7 +48,9 @@
                         <td>{{$persona->apellido_materno}}</td>
                         <td>{{$persona->correo}}</td>
                         <td>{{$persona->telefono}}</td>
-                        <td>{{$persona->id_direccion}}</td>
+                        <td>{{$persona->calle}}</td>
+                        <td>{{$persona->estado}}</td>
+                        <td>{{$persona->codigo_postal}}</td>
                         <td>
                             <a class="btn btn-warning" href="{{ route('persona.edit', $persona->id_persona) }}">Editar</a>
                             <form action="{{ route('persona.destroy', $persona->id_persona) }}" method="POST" style="display:inline;">

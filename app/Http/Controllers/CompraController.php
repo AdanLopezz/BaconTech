@@ -15,7 +15,11 @@ class CompraController extends Controller
      */
     public function index()
     {
-        $compras = Compra::all();
+        $compras = Compra::join('metodos_pagos', 'compras.id_metodo_pago', '=', 'metodos_pagos.id_metodo_pago')
+        ->join('clientes', 'clientes.id_cliente', '=', 'compras.id_cliente')
+        ->join('personas', 'personas.id_persona', '=', 'clientes.id_persona')
+            ->get();
+        //dd($compras);
         return view('compras.index', compact('compras'));
         //
     }

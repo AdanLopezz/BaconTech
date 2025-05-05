@@ -29,14 +29,22 @@
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">id_cliente</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido Paterno</th>
+                    <th scope="col">Apeliido materno</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Telefono</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($clientes as $cliente)
                     <tr>
                         <th scope="row">{{$loop->index+1}}</th>
-                        <td>{{$cliente->id_persona}}</td>
+                        <td>{{$cliente->nombre}}</td>
+                        <td>{{$cliente->apellido_paterno}}</td>
+                        <td>{{$cliente->apellido_materno}}</td>
+                        <td>{{$cliente->correo}}</td>
+                        <td>{{$cliente->telefono}}</td>
                         <td>
                             <a class="btn btn-warning" href="{{ route('cliente.edit', $cliente->id_cliente) }}">Editar</a>
                             <form action="{{ route('cliente.destroy', $cliente->id_cliente) }}" method="POST" style="display:inline;">
