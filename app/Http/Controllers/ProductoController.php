@@ -16,12 +16,12 @@ class ProductoController extends Controller
     public function index()
     {
         $productos = Producto::join('proveedores', 'productos.id_proveedor', '=', 'proveedores.id_proveedor')
-        ->join('personas', 'proveedores.id_persona', '=', 'personas.id_persona')
-        ->get();
-        return view('productos.index', compact('productos'));
-        //
-    }
+            ->join('personas', 'proveedores.id_persona', '=', 'personas.id_persona')
+            ->select('productos.*', 'personas.nombre', 'personas.apellido_paterno', 'personas.apellido_materno')
+            ->get();
 
+        return view('productos.index', compact('productos'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -41,20 +41,31 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
+        // Validar datos (restricciones)
+        $request->validate([
+            'nom_producto' => 'required|string|max:255',
+            'desc_producto' => 'required|string|max:500',
+            'stock' => 'required|integer',
+            'id_proveedor' => 'required|integer',
+            'img_producto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validación de la imagen
+        ]);
 
-        Producto::create([
+        // Todo el pedo de aca abajo es pa la imagen w (creo esta mal pero funciona)
+        $producto = Producto::create([
             'nom_producto' => $request->nom_producto,
             'desc_producto' => $request->desc_producto,
             'stock' => $request->stock,
-            'id_proveedor'=> $request->id_proveedor,
+            'id_proveedor' => $request->id_proveedor,
         ]);
+        if ($request->hasFile('img_producto')) {
+            $filePath = $request->file('img_producto')->store('uploads', 'public');
+
+            $producto->img_producto = $filePath;
+            $producto->save();
+        }
 
         return redirect()->route('producto.index')->with('success', 'Producto agregado');
     }
-
-
-
     /**
      * Display the specified resource.
      *
@@ -75,8 +86,8 @@ class ProductoController extends Controller
     public function edit(Producto $producto)
     {
         return view('productos.edit', compact('producto'));
-        //
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -87,11 +98,38 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        $producto->update($request->all());
+        $request->validate([
+            'nom_producto' => 'required|string|max:255',
+            'desc_producto' => 'required|string|max:255',
+            'stock' => 'required|integer',
+            'id_proveedor' => 'required|integer',
+            'img_producto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validación para la imagen
+        ]);
+
+        if ($request->hasFile('img_producto')) {
+
+            if ($producto->img_producto) {
+                $oldImagePath = storage_path('app/public/' . $producto->img_producto);
+
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);  // Eliminar la imagen
+                }
+            }
+
+            $newImagePath = $request->file('img_producto')->store('uploads', 'public');
+            $producto->img_producto = $newImagePath;  // Guardar la nueva ruta en la base de datos
+        }
+
+        $producto->nom_producto = $request->nom_producto;
+        $producto->desc_producto = $request->desc_producto;
+        $producto->stock = $request->stock;
+        $producto->id_proveedor = $request->id_proveedor;
+
+        $producto->save();
 
         return redirect()->route('producto.index')->with('success', 'Producto actualizado correctamente');
-        //
     }
+
 
     /**
      * Remove the specified resource from storage.
