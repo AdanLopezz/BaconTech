@@ -32,7 +32,9 @@
                     <th scope="col">Nombre del Producto</th>
                     <th scope="col">Descripcion del Producto</th>
                     <th scope="col">Stock del Producto</th>
-                    <th scope="col">ID Proveedor</th>
+                    <th scope="col">Nombre del proveedor</th>
+                    <th scope="col">Apellido paterno</th>
+                    <th scope="col">Apellido materno</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -42,7 +44,9 @@
                         <td>{{$producto->nom_producto}}</td>
                         <td>{{$producto->desc_producto}}</td>
                         <td>{{$producto->stock}}</td>
-                        <td>{{$producto->id_proveedor}}</td>
+                        <td>{{$producto->nombre}}</td>
+                        <td>{{$producto->apellido_paterno}}</td>
+                        <td>{{$producto->apellido_materno}}</td>
 
                         <td>
                             <a class="btn btn-warning" href="{{ route('producto.edit', $producto->id_producto) }}">Editar</a>

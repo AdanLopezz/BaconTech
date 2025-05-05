@@ -29,8 +29,8 @@
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">ID Compra</th>
-                    <th scope="col">ID Producto</th>
+                    <th scope="col">Total de compra</th>
+                    <th scope="col">Producto</th>
                     <th scope="col">Cantidad</th>
                     <th scope="col">Subtotal</th>
                 </tr>
@@ -39,8 +39,8 @@
                 @foreach($detallecompras as $detallecompra)
                     <tr>
                         <th scope="row">{{$loop->index+1}}</th>
-                        <td>{{$detallecompra->id_compra}}</td>
-                        <td>{{$detallecompra->id_producto}}</td>
+                        <td>{{$detallecompra->total_compra}}</td>
+                        <td>{{$detallecompra->nom_producto}}</td>
                         <td>{{$detallecompra->cantidad}}</td>
                         <td>{{$detallecompra->subtotal}}</td>
                         <td>

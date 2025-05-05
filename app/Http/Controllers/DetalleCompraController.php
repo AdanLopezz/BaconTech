@@ -14,7 +14,9 @@ class DetalleCompraController extends Controller
      */
     public function index()
     {
-        $detallecompras = Detalle_compra::all();
+        $detallecompras = Detalle_compra::join('productos','detalle_compras.id_producto','=','productos.id_producto')
+        ->join('compras','detalle_compras.id_compra','=','compras.id_compra')
+        ->get();
         return view('detallecompras.index', compact('detallecompras'));
         //
     }

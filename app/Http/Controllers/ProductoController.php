@@ -15,7 +15,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos = Producto::all();
+        $productos = Producto::join('proveedores', 'productos.id_proveedor', '=', 'proveedores.id_proveedor')
+        ->join('personas', 'proveedores.id_persona', '=', 'personas.id_persona')
+        ->get();
         return view('productos.index', compact('productos'));
         //
     }
