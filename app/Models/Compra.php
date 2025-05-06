@@ -10,8 +10,10 @@ use Illuminate\Testing\Fluent\Concerns\Has;
 class Compra extends Model
 {
     use SoftDeletes;
+    use HasFactory;
+
     protected $table = 'compras';
     protected $primaryKey = 'id_compra';
     protected $fillable = ['id_cliente','fecha','total_compra','id_metodo_pago'];
-    use HasFactory;
+
 }
