@@ -35,7 +35,7 @@
                 <li class="nav-item py-2 {{ Request::is('compra*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('compra.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cart-shopping ms-4"></i>Compras</a></li>
                 <li class="nav-item py-2 {{ Request::is('producto*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('producto.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-desktop ms-4"></i>Productos</a></li>
                 <li class="nav-item py-2 {{ Request::is('detallecompra*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('detallecompra.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cash-register ms-4"></i>Detalle Compra</a></li>
-
+                <li class="nav-item py-2 {{ Request::is('landing*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('landing.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cash-register ms-4"></i>Landing</a></li>
 
             </ul>
 

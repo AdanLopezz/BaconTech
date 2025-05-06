@@ -43,4 +43,6 @@ route::resource('producto', App\Http\Controllers\ProductoController::class);
 
 route::resource('detallecompra', App\Http\Controllers\DetalleCompraController::class);
 
+route::resource('landing', App\Http\Controllers\LandingController::class);
+
 Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
