@@ -61,82 +61,19 @@
         <div class="container">
             <h2 class="text-center mb-4">Nuestros Productos</h2>
 
-            <!-- Primera fila de productos -->
             <div class="row py-4">
-                <div class="col-md-4">
-
-                    <div class="card">
-                        <img src="img/disipador.jpg" class="card-img-top" alt="Producto 1">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Disipador de calor</h5>
-                            <p class="card-text">Disipador de calor para sockets AM4</p>
-                            <a href="#" class="btn btn-primary">Comprar</a>
+                @foreach($productos as $producto)
+                    <div class="col-md-4 mt-4">
+                        <div class="card">
+                            <img src="{{asset('storage/' . $producto->img_producto) }}" class="card-img-top" alt="Producto">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">{{$producto->nom_producto}}</h5>
+                                <p class="card-text">{{$producto->desc_producto}}</p>
+                                <a href="#" class="btn btn-primary">Comprar</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/grafica.jpg" class="card-img-top" alt="Producto 2">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Asus Nvidia GeForce RTX 3050</h5>
-                            <p class="card-text">DUAL-RTX3060-O12G-V2, 12GB GDDR6</p>
-                            <a href="#" class="btn btn-primary">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/intel.png" class="card-img-top" alt="Producto 3">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Intel CPU Core i9-14900K</h5>
-                            <p class="card-text">3.2GHz 24core LGA1700 Socket</p>
-                            <a href="#" class="btn btn-primary">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Segunda fila de productos -->
-
-            <div class="row py-4">
-                <div class="col-md-4">
-
-                    <div class="card">
-                        <img src="img/disipador.jpg" class="card-img-top" alt="Producto 1">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Disipador de calor</h5>
-                            <p class="card-text">Disipador de calor para sockets AM4</p>
-                            <a href="#" class="btn btn-primary">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/grafica.jpg" class="card-img-top" alt="Producto 2">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Asus Nvidia GeForce RTX 3050</h5>
-                            <p class="card-text">DUAL-RTX3060-O12G-V2, 12GB GDDR6</p>
-                            <a href="#" class="btn btn-primary">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/intel.png" class="card-img-top" alt="Producto 3">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Intel CPU Core i9-14900K</h5>
-                            <p class="card-text">3.2GHz 24core LGA1700 Socket</p>
-                            <a href="#" class="btn btn-primary">Comprar</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
         </div>

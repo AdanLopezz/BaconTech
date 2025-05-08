@@ -64,6 +64,7 @@ class ProductoController extends Controller
             $producto->save();
         }
 
+
         return redirect()->route('producto.index')->with('success', 'Producto agregado');
     }
     /**
