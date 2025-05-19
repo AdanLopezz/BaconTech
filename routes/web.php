@@ -39,10 +39,12 @@ Route::resource("proveedor", App\Http\Controllers\ProveedorController::class);
 
 Route::resource('compra', App\Http\Controllers\CompraController::class);
 
-route::resource('producto', App\Http\Controllers\ProductoController::class);
+Route::resource('producto', App\Http\Controllers\ProductoController::class);
 
 route::resource('detallecompra', App\Http\Controllers\DetalleCompraController::class);
 
 route::resource('landing', App\Http\Controllers\LandingController::class);
 
 Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+
+//Route::get('/producto/{id}', [ProductoController::class, 'mostrar'])->name('producto.mostrar');

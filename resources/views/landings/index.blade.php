@@ -69,7 +69,8 @@
                             <div class="card-body text-center">
                                 <h5 class="card-title">{{$producto->nom_producto}}</h5>
                                 <p class="card-text">{{$producto->desc_producto}}</p>
-                                <a href="#" class="btn btn-primary">Comprar</a>
+                                <p class="card-text">{{$producto->precio}}</p>
+                                <a href="{{ route('producto.show', $producto->id_producto) }}" class="btn btn-primary">Comprar</a>
                             </div>
                         </div>
                     </div>

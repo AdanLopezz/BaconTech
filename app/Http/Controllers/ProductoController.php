@@ -75,6 +75,8 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
+        //dd($producto);
+        return  view('productos.vista', compact('producto'));
         //
     }
 
@@ -143,5 +145,11 @@ class ProductoController extends Controller
         $producto->delete();
         return redirect()->route('producto.index')->with('success','Producto eliminado correctamente');
         //
+    }
+
+    public function mostrar($id)
+    {
+        $producto = Producto::findOrFail($id);
+        return view('productos.vista', compact('producto'));
     }
 }
