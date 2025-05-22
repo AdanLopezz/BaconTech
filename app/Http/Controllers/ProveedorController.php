@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Persona;
 use App\Models\Proveedor;
 use Illuminate\Http\Request;
 
@@ -61,7 +62,11 @@ class ProveedorController extends Controller
      */
     public function edit(Proveedor $proveedor)
     {
-        return view('proveedores.edit', compact('proveedor'));
+
+        //dd($persona);
+        $persona = Persona::find($proveedor->id_persona);
+
+        return view('personas.edit', compact('persona'));
     }
 
     /**

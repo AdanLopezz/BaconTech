@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\Persona;
 use Illuminate\Http\Request;
 
 class ClienteController extends Controller
@@ -60,7 +61,8 @@ class ClienteController extends Controller
      */
     public function edit(Cliente $cliente)
     {
-        return view('clientes.edit', compact('cliente'));
+        $persona = Persona::find($cliente->id_persona);
+        return view('personas.edit', compact('persona'));
     }
 
     /**
