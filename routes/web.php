@@ -55,4 +55,8 @@ Route::get('nosotros', function (){
     return view('nosotros');
 });
 
+Route::get('contactos', function (){
+    return view('contactos');
+});
+
 //Route::get('/producto/{id}', [ProductoController::class, 'mostrar'])->name('producto.mostrar');

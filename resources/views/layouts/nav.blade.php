@@ -40,7 +40,7 @@
     @yield('content')
 </main>
 
-<footer class="text-center py-4 bg-white border-top">
+<footer class="text-center py-4 bg-white border-top " style="margin-top: inherit">
     <div class="container">
         <small class="text-muted">&copy; 2025 BaconTech. Todos los derechos reservados.</small>
     </div>
