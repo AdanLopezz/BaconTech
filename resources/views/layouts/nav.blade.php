@@ -29,15 +29,21 @@
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="landing">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Recursos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Precios</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('dashboard')}}">DashBoard</a></li>
+
             </ul>
-        </div>
-        <div>
-            <a href="#" class="btn btn-outline-primary me-2">Contacto</a>
-            <a href="#" class="btn btn-primary">Comenzar</a>
         </div>
     </div>
 </nav>
+
+<main>
+    @yield('content')
+</main>
+
+<footer class="text-center py-4 bg-white border-top">
+    <div class="container">
+        <small class="text-muted">&copy; 2025 BaconTech. Todos los derechos reservados.</small>
+    </div>
+</footer>
 </body>
 </html>

@@ -127,6 +127,7 @@ class ProductoController extends Controller
         $producto->desc_producto = $request->desc_producto;
         $producto->stock = $request->stock;
         $producto->id_proveedor = $request->id_proveedor;
+        $producto->precio = $request->precio;
 
         $producto->save();
 

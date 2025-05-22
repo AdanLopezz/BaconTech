@@ -9,7 +9,7 @@
         <div class="container text-white text-center">
             <h1>Encuentra los mejores componentes para la pc de tus sueños</h1>
             <p class="lead">Calidad y precios accesibles</p>
-            <a href="#productos" class="btn btn-light btn-lg">Ver productos</a>
+            <a href="" class="btn btn-light btn-lg">Sobre nosotros</a>
         </div>
     </header>
 
@@ -69,7 +69,7 @@
                             <div class="card-body text-center">
                                 <h5 class="card-title">{{$producto->nom_producto}}</h5>
                                 <p class="card-text">{{$producto->desc_producto}}</p>
-                                <p class="card-text">{{$producto->precio}}</p>
+                                <p class="card-text">$ {{$producto->precio}}</p>
                                 <a href="{{ route('producto.show', $producto->id_producto) }}" class="btn btn-primary">Comprar</a>
                             </div>
                         </div>

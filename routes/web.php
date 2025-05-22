@@ -51,4 +51,8 @@ route::resource('landing', App\Http\Controllers\LandingController::class);
 
 Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
+Route::get('nosotros', function (){
+    return view('nosotros');
+});
+
 //Route::get('/producto/{id}', [ProductoController::class, 'mostrar'])->name('producto.mostrar');
