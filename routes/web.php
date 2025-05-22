@@ -25,6 +25,10 @@ Route::get("landing",function(){
     return view('landing');
 });
 
+Route::get("nosotros",function(){
+    return view('nosotros');
+});
+
 Route::resource("metodoPago", App\Http\Controllers\MetodoPagoController::class);
 
 Route::resource("direccion", App\Http\Controllers\DireccionController::class);

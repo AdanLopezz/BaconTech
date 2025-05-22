@@ -33,6 +33,7 @@
                     <th scope="col">Nombre del proveedor</th>
                     <th scope="col">Apellido paterno</th>
                     <th scope="col">Apellido materno</th>
+                    <th scope="col">Precio</th>
                     <th scope="col">Imagen del Producto</th>
                     <th scope="col">Acciones</th>
                 </tr>
@@ -47,6 +48,7 @@
                         <td>{{ $producto->nombre }}</td>
                         <td>{{ $producto->apellido_paterno }}</td>
                         <td>{{ $producto->apellido_materno }}</td>
+                        <td>{{ $producto->precio }}</td>
 
                         <td>
                             @if($producto->img_producto) <!-- Verificar si hay imagen -->

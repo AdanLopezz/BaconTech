@@ -28,6 +28,9 @@
                     <label for="stock" class="form-label">Stock</label>
                     <input type="number" class="form-control" id="stock" name="stock" value="{{ old('stock', $producto->stock) }}" required>
 
+                    <label for="stock" class="form-label">Precio</label>
+                    <input type="number" class="form-control" id="stock" name="stock" value="{{ old('stock', $producto->precio) }}" required>
+
                     <label for="id_proveedor" class="form-label">ID Proveedor</label>
                     <input type="number" class="form-control" id="id_proveedor" name="id_proveedor" value="{{ old('id_proveedor', $producto->id_proveedor) }}" required>
 
