@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="landing">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="productosdis">Productos</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('dashboard')}}">DashBoard</a></li>
 
             </ul>
