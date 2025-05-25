@@ -16,9 +16,11 @@
 
     <div class="cont">
         <div class="row m-2">
-            <div class="col-4 d-flex justify-content-center">
+            <a href="contactos" class="col-4 d-flex justify-content-center">
                 <img  class="w-auto" src="img/publicidad1.png" alt="...">
-            </div>
+            </a>
+
+
 
             <div class="col-8">
                 <div id="carouselExampleCaptions" class="carousel slide container d-flex justify-content-center">

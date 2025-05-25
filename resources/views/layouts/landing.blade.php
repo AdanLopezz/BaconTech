@@ -36,6 +36,9 @@
                 </li>
                 <li><a href="">
                         <a class="nav-link active text-white fw-bold" aria-current="page" href="nosotros">Sobre nosotros</a>
+                    </li>
+                <li><a href="">
+                        <a class="nav-link active text-white fw-bold" aria-current="page" href="nosotros">Sobre nosotros</a>
                     </a></li>
             </ul>
             <ul class="navbar-nav ms-auto">
