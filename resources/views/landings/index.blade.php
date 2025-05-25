@@ -1,4 +1,4 @@
-@extends('layouts.landing')
+@extends('layouts.nav')
 @section('content')
 
 
@@ -9,7 +9,7 @@
         <div class="container text-white text-center">
             <h1>Encuentra los mejores componentes para la pc de tus sueños</h1>
             <p class="lead">Calidad y precios accesibles</p>
-            <a href="" class="btn btn-light btn-lg">Sobre nosotros</a>
+            <a href="nosotros" class="btn btn-light btn-lg">Sobre nosotros</a>
         </div>
     </header>
 

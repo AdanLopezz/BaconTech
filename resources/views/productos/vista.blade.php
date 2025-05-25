@@ -1,4 +1,4 @@
-@extends('layouts.landing')
+@extends('layouts.nav')
 
 @section('content')
     <div class="container mt-5">
@@ -14,7 +14,7 @@
                 <h1>{{ $producto->nom_producto }}</h1>
                 <p>{{ $producto->desc_producto }}</p>
                 <p><strong>Precio:</strong> ${{ $producto->precio }}</p>
-                    <button type="submit" class="btn btn-success">Añadir al carrito</button>
+
 
             </div>
         </div>

@@ -99,6 +99,7 @@ class PersonaController extends Controller
     public function destroy(Persona $persona)
     {
         $persona->delete();
+        //dd($persona);
         return redirect()->route('persona.index')->with('success','Persona eliminada correctamente');
     }
 }

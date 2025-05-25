@@ -15,6 +15,7 @@ class MetodoPagoController extends Controller
     public function index()
     {
         $metodo_pagos = Metodo_Pago::all();
+        //dd($metodo_pagos);
         return view("metodoPagos.index", compact('metodo_pagos'));
     }
 
@@ -70,9 +71,11 @@ class MetodoPagoController extends Controller
     }
 
 
-    public function destroy(Metodo_Pago $metodo_Pago)
+    public function destroy(Metodo_Pago $metodoPago)
     {
-        $metodo_Pago->delete();
-        return redirect()->route('metodoPago.index')->with('success', 'Tarjeta borrada correctamente.');
+        //dd($metodo_Pago);
+        $metodoPago->delete();
+        //dd($metodoPago);
+        return redirect()->route('metodoPago.index')->with('success', 'Metodo borrado correctamente.');
     }
 }
