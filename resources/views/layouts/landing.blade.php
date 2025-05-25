@@ -17,6 +17,11 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
 </head>
+    <style>
+    body{
+        background: url("https://cdn.pixabay.com/photo/2022/02/18/06/17/futuristic-7020072_1280.jpg");
+    }
+</style>
 <body>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary pb-0 pt-0">
