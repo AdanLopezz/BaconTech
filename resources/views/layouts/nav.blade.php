@@ -27,9 +27,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="landing">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="productosdis">Productos</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{route('dashboard')}}">DashBoard</a></li>
+                <li><a class="nav-link fw-bold" href="landing">Inicio</a></li>
+                <li><a class="nav-link fw-bold" href="{{route('dashboard')}}">DashBoard</a></li>
+                <li><a class="nav-link fw-bold" aria-current="page" href="nosotros">Sobre nosotros</a></li>
 
             </ul>
         </div>
