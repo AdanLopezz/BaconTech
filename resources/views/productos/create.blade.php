@@ -41,6 +41,9 @@
                     <label for="stock" class="form-label">Stock</label>
                     <input type="text" class="form-control" id="stock" name="stock" required>
 
+                    <label for="precio" class="form-label">Precio</label>
+                    <input type="text" class="form-control" id="precio" name="precio" required>
+
                     <label for="id_proveedor" class="form-label">ID Proveedor</label>
                     <input type="text" class="form-control" id="id_proveedor" name="id_proveedor" required>
 

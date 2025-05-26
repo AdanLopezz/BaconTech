@@ -55,6 +55,7 @@ class ProductoController extends Controller
             'nom_producto' => $request->nom_producto,
             'desc_producto' => $request->desc_producto,
             'stock' => $request->stock,
+            'precio' => $request->precio,
             'id_proveedor' => $request->id_proveedor,
         ]);
         if ($request->hasFile('img_producto')) {
