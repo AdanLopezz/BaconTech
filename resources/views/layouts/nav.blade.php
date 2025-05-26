@@ -8,6 +8,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+     <style>
+    body{
+        background: url("https://cdn.pixabay.com/photo/2022/02/18/06/17/futuristic-7020072_1280.jpg");
+    }
+</style>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
