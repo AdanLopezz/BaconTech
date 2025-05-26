@@ -44,77 +44,77 @@
 <body>
 <main class="container-fluid bg-light">
     <div class="row min-vh-100">
-       
+
         <div class="col-2 d-flex flex-column align-items-center bg-dark text-white p-3">
             <img src="{{ asset('img/perfil.jpeg') }}" class="rounded-circle w-50 mb-3" alt="logo">
 
             <h4 class="fw-bold text-center">{{ Auth::user()->name ?? 'Usuario' }}</h4>
 
             <ul class="nav flex-column w-100 mt-3" id="mainSidebar">
-                <li class="nav-item py-2 sidebar-item {{ isActiveRoute('dashboard') }}">
+                <li class="nav-item py-2 sidebar-item {{('dashboard') }}">
                     <a href="{{ route('dashboard') }}" class="text-decoration-none text-white d-flex align-items-center sidebar-link">
                         <i class="fa-solid fa-toolbox sidebar-icon ms-3"></i>
                         <span class="ms-3">Dashboard</span>
                     </a>
                 </li>
-                
-                <li class="nav-item py-2 sidebar-item {{ isActiveRoute('metodoPago*') }}">
+
+                <li class="nav-item py-2 sidebar-item {{('metodoPago*') }}">
                     <a href="{{ route('metodoPago.index') }}" class="text-decoration-none text-white d-flex align-items-center sidebar-link">
                         <i class="fa-solid fa-credit-card sidebar-icon ms-3"></i>
                         <span class="ms-3">mtodoPagos</span>
                     </a>
                 </li>
-                
-                <li class="nav-item py-2 sidebar-item {{ isActiveRoute('direccion*') }}">
+
+                <li class="nav-item py-2 sidebar-item {{ ('direccion*') }}">
                     <a href="{{ route('direccion.index') }}" class="text-decoration-none text-white d-flex align-items-center sidebar-link">
                         <i class="fa-solid fa-location-dot sidebar-icon ms-3"></i>
                         <span class="ms-3">Direccion</span>
                     </a>
                 </li>
-                
-                <li class="nav-item py-2 sidebar-item {{ isActiveRoute('persona*') }}">
+
+                <li class="nav-item py-2 sidebar-item {{ ('persona*') }}">
                     <a href="{{ route('persona.index') }}" class="text-decoration-none text-white d-flex align-items-center sidebar-link">
                         <i class="fa-solid fa-person sidebar-icon ms-3"></i>
                         <span class="ms-3">personas</span>
                     </a>
                 </li>
-                
-                <li class="nav-item py-2 sidebar-item {{ isActiveRoute('cliente*') }}">
+
+                <li class="nav-item py-2 sidebar-item {{ ('cliente*') }}">
                     <a href="{{ route('cliente.index') }}" class="text-decoration-none text-white d-flex align-items-center sidebar-link">
                         <i class="fa-regular fa-circle-user sidebar-icon ms-3"></i>
                         <span class="ms-3">clientes</span>
                     </a>
                 </li>
-                
-                <li class="nav-item py-2 sidebar-item {{ isActiveRoute('proveedor*') }}">
+
+                <li class="nav-item py-2 sidebar-item {{ ('proveedor*') }}">
                     <a href="{{ route('proveedor.index') }}" class="text-decoration-none text-white d-flex align-items-center sidebar-link">
                         <i class="fa-solid fa-truck sidebar-icon ms-3"></i>
                         <span class="ms-3">proveedores</span>
                     </a>
                 </li>
-                
-                <li class="nav-item py-2 sidebar-item {{ isActiveRoute('compra*') }}">
+
+                <li class="nav-item py-2 sidebar-item {{ ('compra*') }}">
                     <a href="{{ route('compra.index') }}" class="text-decoration-none text-white d-flex align-items-center sidebar-link">
                         <i class="fa-solid fa-cart-shopping sidebar-icon ms-3"></i>
                         <span class="ms-3">Compras</span>
                     </a>
                 </li>
-                
-                <li class="nav-item py-2 sidebar-item {{ isActiveRoute('producto*') }}">
+
+                <li class="nav-item py-2 sidebar-item {{ ('producto*') }}">
                     <a href="{{ route('producto.index') }}" class="text-decoration-none text-white d-flex align-items-center sidebar-link">
                         <i class="fa-solid fa-desktop sidebar-icon ms-3"></i>
                         <span class="ms-3">Productos</span>
                     </a>
                 </li>
-                
-                <li class="nav-item py-2 sidebar-item {{ isActiveRoute('detallecompra*') }}">
+
+                <li class="nav-item py-2 sidebar-item {{ ('detallecompra*') }}">
                     <a href="{{ route('detallecompra.index') }}" class="text-decoration-none text-white d-flex align-items-center sidebar-link">
                         <i class="fa-solid fa-cash-register sidebar-icon ms-3"></i>
                         <span class="ms-3">detallecompra</span>
                     </a>
                 </li>
-                
-                <li class="nav-item py-2 sidebar-item {{ isActiveRoute('landing*') }}">
+
+                <li class="nav-item py-2 sidebar-item {{('landing*') }}">
                     <a href="{{ route('landing.index') }}" class="text-decoration-none text-white d-flex align-items-center sidebar-link">
                         <i class="fa-solid fa-house sidebar-icon ms-3"></i>
                         <span class="ms-3">Landing</span>
@@ -133,7 +133,7 @@
             </div>
         </div>
 
-        
+
         <div class="col pt-4 bg-light ps-0">
             @yield('content')
         </div>
@@ -144,14 +144,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     const currentPath = window.location.pathname;
     const sidebarItems = document.querySelectorAll('#mainSidebar .sidebar-item');
-    
+
     sidebarItems.forEach(item => {
         const link = item.querySelector('a');
         if (link.getAttribute('href') === currentPath) {
             item.classList.add('active');
         }
     });
-    
+
     const sidebarLinks = document.querySelectorAll('.sidebar-link');
     sidebarLinks.forEach(link => {
         link.addEventListener('mouseenter', function() {
