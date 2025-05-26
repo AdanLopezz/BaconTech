@@ -3,6 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Sobre Nosotros | NovaCore</title>
+         <style>
+    body{
+        background: url("https://cdn.pixabay.com/photo/2022/02/18/06/17/futuristic-7020072_1280.jpg");
+    }
+</style>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
