@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
+         <style>
+    body{
+        background: url("https://cdn.pixabay.com/photo/2022/02/18/06/17/futuristic-7020072_1280.jpg");
+    }
+</style>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
