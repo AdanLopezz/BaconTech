@@ -17,6 +17,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
 </head>
+   
 <body>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary pb-0 pt-0">
